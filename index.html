@@ -1,0 +1,127 @@
+<!doctype html>
+<html ng-app="weather">
+    <head>
+        <link rel="stylesheet" type=" text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type=" text/css" href="css/main.css" />
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <scrpit src="js/controller.js"></script> 
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="row">
+                 <div class="col-md-12 page-header">
+                     <h1>Weather Today</h1>
+                 </div>
+            </div>
+        </div>
+        <div id="PageLeft" ng-controller="WeatherController" ng-init="getData()">
+            <div class="container">
+                <div class="row">
+                     <div class="col-md-12">
+                           <div id="city">{{details.name}}</div>
+                            <span> <img data-ng-src={{imagesrc}}></image></span>
+                            <span id="temperature">{{temp}}<sup>o</sup>C</span> 
+                            <div id="update">Last update: {{details.dt*1000 |date:'medium'}}</div>
+                            <div id="description">{{details.weather[0].description}}</div>
+                            <div id="moreinfo">
+                                 <table >
+                                       <tr>
+                                             <th>Wind</th>
+                                             <th>Humidity</th> 
+                                       </tr>
+                                       <tr>
+                                             <td>{{details.wind.speed}}kmph</td>
+                                             <td>{{details.main.humidity}}%</td>
+                                       </tr>
+                                       <tr>
+                                             <th>Pressure</th>
+                                             <th>Visibility</th> 
+                                       </tr>
+                                       <tr>
+                                             <td>{{details.main.pressure}}Pa</td>
+                                             <td>km</td>
+                                       </tr>
+
+                                 </table>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--******PageLeft Ends Here********-->
+ 
+        <div id="PageRight" ng-controller="ForecastController" ng-init="getForecastData()">
+                 <div class="btn-group">
+                        <button type="button" class="btn btn-default">Today</button>
+                        <button type="button" class="btn btn-default">This Week</button>
+                        <button type="button" class="btn btn-default">Hourly</button>
+                 </div>
+                 <div class="container">
+                        
+                        <div class="row">
+                                 <div class="col-md-12">
+                                     <div class="tile">
+                                        <div class="tileHead">{{forecast.list[3].dt*1000 |date:'EEEE'}}
+                                                              {{forecast.list[3].dt*1000 |date:'HH'}}:
+                                                              {{forecast.list[3].dt*1000 |date:'mm'}}       
+                                        </div>
+                                        <span> <img class="tileIcon" data-ng-src={{imagesrc1}}></image></span>
+                                        <span class="tileTemp">{{temp1}}<sup>o</sup>C</span> 
+                                        <div class="tileDesc">
+                                             <b> {{forecast.list[3].weather[0].description}}  </b> 
+                                        </div>
+                                        <div class="tileInfo">
+                                            <div> <b>Cloudiness:</b>{{forecast.list[3].clouds.all}}%</div>
+                                            <div><b>Humidity:</b>{{forecast.list[3].main.humidity}}%</div>
+                                             <div><b>Wind Speed:</b>{{forecast.list[3].wind.speed}}kmph</div>
+                                        </div>
+                                    </div>
+                                     <div class="tile">
+                                        <div class="tileHead">{{forecast.list[6].dt*1000 |date:'EEEE'}}
+                                                              {{forecast.list[6].dt*1000 |date:'HH'}}:
+                                                              {{forecast.list[6].dt*1000 |date:'mm'}}       
+                                        </div>
+                                        <span> <img class="tileIcon" data-ng-src={{imagesrc2}}></image></span>
+                                        <span class="tileTemp">{{temp2}}<sup>o</sup>C</span> 
+                                        <div class="tileDesc">
+                                             <b> {{forecast.list[6].weather[0].description}}  </b> 
+                                        </div>
+                                        <div class="tileInfo">
+                                            <div> <b>Cloudiness:</b>{{forecast.list[6].clouds.all}}%</div>
+                                            <div><b>Humidity:</b>{{forecast.list[6].main.humidity}}%</div>
+                                            <div><b>Wind Speed:</b>{{forecast.list[6].wind.speed}}kmph</div>
+                                        </div>
+                                     </div>
+                                     <div class="tile">
+                                            <div class="tileHead">{{forecast.list[9].dt*1000 |date:'EEEE'}}
+                                                                  {{forecast.list[9].dt*1000 |date:'HH'}}:
+                                                                  {{forecast.list[9].dt*1000 |date:'mm'}}       
+                                        </div>
+                                        <span> <img class="tileIcon" data-ng-src={{imagesrc3}}></image></span>
+                                        <span class="tileTemp">{{temp3}}<sup>o</sup>C</span> 
+                                        <div class="tileDesc">
+                                             <b> {{forecast.list[9].weather[0].description}}  </b> 
+                                        </div>
+                                        <div class="tileInfo">
+                                            <div> <b>Cloudiness:</b>{{forecast.list[9].clouds.all}}%</div>
+                                            <div><b>Humidity:</b>{{forecast.list[9].main.humidity}}%</div>
+                                             <div><b>Wind Speed:</b>{{forecast.list[9].wind.speed}}kmph</div>
+                                        </div>
+                                     </div>
+                                 </div>
+                        </div>
+                 </div>
+        </div>
+        <!--********PageRight Ends Here******-->
+
+                     <script src="js/angular.min.js" ></script>
+                     <script src="js/bootstrap.js" ></script>
+
+                     <script src="js/app.js" ></script>
+                     <script src="js/services.js"></script>
+                      
+    </body>
+</html>

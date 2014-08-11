@@ -1,0 +1,104 @@
+html{
+
+}
+body
+{
+        width:100%;
+	      background: url(../images/background.png) no-repeat;
+	      background-repeat:no-repeat;
+        background-size:cover; 
+}
+.tile{
+
+	background-color: rgba(11,22,99,0.3);
+	height:400px; 
+	width:22%; 
+	float:left;
+	margin-right:2%; 
+	margin-top: 2%;
+	padding:5px;
+}
+#city
+   {
+   	 font-size: 30px;
+   	 font-style: bold;
+   	 color: #FFFFFF;
+   }
+ #temperature{
+     font-size: 70px;
+   	 font-style: bold;
+   	 color: #FFFFFF;
+   	 margin-left: 20px;
+
+ }  
+ img {
+
+ 	height:100px;
+ 	width:100px;
+ }
+ #PageLeft{
+  width:27%;
+  float: left;
+  margin-left: 3%;
+ }
+ #PageRight{
+  width:66%;
+  float: right;
+  margin-left: 4%;
+ }
+ #description{
+     font-size: 30px;
+     font-style: bold;
+     color: #FFFFFF;
+     margin-top: 4%;
+
+ }
+ #moreinfo{
+     font-size: 20px;
+     font-style: bold;
+     color: #FFFFFF;
+     margin-top: 4%;
+
+ }
+ table td {
+  padding-left:1em;
+  padding-right: 2em;
+  text-align: left;
+ }
+table th {
+  padding-left:1em;
+  padding-right: 2em;
+  padding-top: 1em;
+  text-align: left;
+ }
+ #update{
+     font-size: 20px;
+     font-style: bold;
+     color: #FFFFFF;
+ }
+ .tileHead{
+     font-size: 20px;
+     font-style: bold;
+     color: #FFFFFF;
+ }
+ .tileTemp{
+     font-size: 40px;
+     font-style: bold;
+     color: #FFFFFF;
+     margin-left: 10px;
+ }
+ .tileIcon{
+    height:50px;
+    width:50px;
+ }
+.tileDesc{
+     font-size: 20px;
+     font-style: bold;
+     color: #FFFFFF;
+     margin-top: 4%;
+}
+.tileInfo{
+     font-size: 15px;
+     color: #FFFFFF;
+     margin-top: 8%;
+}
