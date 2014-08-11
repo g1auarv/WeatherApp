@@ -5,7 +5,7 @@ var app=angular.module('weather',[
 app.controller('WeatherController', function($scope,$http){
   $scope.details={};
   $scope.imagesrc="http://openweathermap.org/img/w/";
-  $http.get("http://api.openweathermap.org/data/2.5/weather?q=PATNA,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
+  $http.get("http://api.openweathermap.org/data/2.5/weather?q=VELLORE,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
            $scope.details=response.data;
            $scope.imagesrc=$scope.imagesrc+$scope.details.weather[0].icon+".png";
            $scope.temp=Math.round($scope.details.main.temp);
@@ -32,5 +32,10 @@ app.controller('ForecastController', function ($scope, $http){
   });
    };
 });
-
+app.directive('forecastTile',function(){
+  return{
+            restrict: 'E',
+            templateUrl:'forecast-tile.html'
+  };
+});
 
