@@ -5,7 +5,7 @@ var app=angular.module('weather',[
 app.controller('WeatherController', function($scope,$http){
   $scope.details={};
   $scope.imagesrc="http://openweathermap.org/img/w/";
-  $http.get("http://api.openweathermap.org/data/2.5/weather?q=VELLORE,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
+  $http.get("http://api.openweathermap.org/data/2.5/weather?q=NEW DELHI,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
            $scope.details=response.data;
            $scope.imagesrc=$scope.imagesrc+$scope.details.weather[0].icon+".png";
            $scope.temp=Math.round($scope.details.main.temp);
@@ -21,7 +21,7 @@ app.controller('ForecastController', function ($scope, $http){
     $scope.imagesrc3="http://openweathermap.org/img/w/";
    $scope.getForecastData=function(){
    // alert("xyz");
-     $http.get("http://api.openweathermap.org/data/2.5/forecast?q=VELLORE,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
+     $http.get("http://api.openweathermap.org/data/2.5/forecast?q=NEW DELHI,in&APPID=92725b615a39169992fbc1ed875188f2&units=metric").then(function(response){
                 $scope.forecast=response.data;
                 $scope.imagesrc1=$scope.imagesrc1+$scope.forecast.list[3].weather[0].icon+".png";
                 $scope.temp1=Math.round($scope.forecast.list[3].main.temp);
@@ -38,4 +38,5 @@ app.directive('forecastTile',function(){
             templateUrl:'forecast-tile.html'
   };
 });
+
 
