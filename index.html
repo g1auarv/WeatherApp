@@ -18,6 +18,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <div id="city">{{details.name}}
+                        </div>
                         <span> <img data-ng-src={{imagesrc}}></img></span>
                         <span id="temperature">{{temp}}<sup>o</sup>C</span> 
                         <div id="update">Last update: {{details.dt*1000 |date:'medium'}}</div>
