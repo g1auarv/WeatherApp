@@ -38,5 +38,11 @@ app.directive('forecastTile',function(){
             templateUrl:'forecast-tile.html'
   };
 });
+app.directive('modalBody',function(){
+  return{
+            restrict: 'E',
+            templateUrl:'modal-body.html'
+  };
+});
 
 

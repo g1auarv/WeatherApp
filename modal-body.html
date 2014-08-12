@@ -1,0 +1,40 @@
+
+<script type="text/javascript">
+jQuery(function () 
+ {
+	 jQuery("#f_elem_city").autocomplete({
+		source: function (request, response) {
+		 jQuery.getJSON(
+			"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+			function (data) {
+			 response(data);
+			}
+		 );
+		},
+		minLength: 3,
+		select: function (event, ui) {
+		 var selectedObj = ui.item;
+		 jQuery("#f_elem_city").val(selectedObj.value);
+		 return false;
+		},
+		open: function () {
+		 jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+		},
+		close: function () {
+		 jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+		}
+	 });
+	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
+	});
+</script>
+<!--p><b>Please enter</b> your city here to see it work. <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/-->
+	                <div class="row">
+                      <div class="col-lg-12">
+                        <div class="input-group">
+                          <input type="text" class="form-control ff_elem" placeholder="Use down key to select ....." name="ff_nm_from[]" id="f_elem_city">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"  >Go!</button>
+                          </span>
+                        </div><!--/input-group -->
+                      </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
